@@ -1,10 +1,3 @@
-/* 
-    MILESTONE 1: Rimuovere i contenuti statici, usare l'array ad oggetti letterali
-    per popolare dinamicamente il carosello.
-    Al click sulle frecce, l'immagine attiva diventerà visibile e verrà aggiunto
-    titolo e testo.
-*/    
-
 const images = [
     {
         image: 'img/01.webp',
@@ -67,4 +60,27 @@ prevBtn.addEventListener('click', () => {
     currentSlide = images.length - 1;
   }
   showSlide();
+});
+
+// Aggiunta immagini alla thumbnails
+const thumbnails = document.querySelectorAll('.carousel-thumbnail');
+
+thumbnails.forEach((thumbnail, index) => {
+  const image = images[index];
+  thumbnail.querySelector('img').src = image.image;
+  thumbnail.querySelector('img').alt = image.title;
+});
+
+// Aggiunta di un event listener per le miniature
+thumbnails.forEach((thumbnail, index) => {
+  thumbnail.addEventListener('click', () => {
+    currentSlide = index;
+    showSlide();
+
+    // Rimozione della classe "active" dalle miniature e aggiunta alla miniatura selezionata
+    thumbnails.forEach(thumbnail => {
+      thumbnail.classList.remove('active');
+    });
+    thumbnail.classList.add('active');
+  });
 });

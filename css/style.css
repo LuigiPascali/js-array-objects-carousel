@@ -3,22 +3,38 @@
     MAIN
 */
 
-.carousel-container {width: 50rem;height: 31.25rem;margin: 3.125rem auto;position: relative;}
-  
-.carousel-slide {display: flex;width: 100%;height: 100%;position: absolute;top: 0;left: 0;}
-  
+.carousel-container {width: 50rem;height: 31.25rem;margin: 3.125rem auto;position: relative;border: .3125rem solid var(--dark_color);overflow: hidden;}
+
+.carousel-slide {display: flex;width: 100%;height: 100%;position: absolute;top: 0;left: 0;transition: transform 0.5s ease-in-out;}
+
 .carousel-slide img {width: 100%;height: 100%;object-fit: cover;}
-  
-.carousel-text {position: absolute;bottom: 0;left: 0;padding: 1.25rem;color: var(--light_color);background-color:transparent;width: 100%;}
-  
+
+.carousel-text {position: absolute;bottom: 0;left: 0;padding: 1.25rem;color: var(--light_color);background-color: rgba(0, 0, 0, 0.5);width: 100%;transform: translateY(100%);transition: transform 0.5s ease-in-out;}
+
 .carousel-text h2 {font-size: 1.5rem;margin-bottom: .625rem;}
-   
+
+.carousel-slide:hover .carousel-text {transform: translateY(0);}
+
+.carousel-thumbnails {position: absolute;top: 0;right: 0;width: 12.5rem;height: 33.125rem;margin-top: 2.5rem;padding: .625rem;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+
+.carousel-thumbnail {display: inline-block;width: 100%;height: 6.255rem;margin-bottom: .625rem;cursor: pointer;position: relative;overflow: hidden;transition: transform 0.5s ease-in-out;}
+
+.carousel-thumbnail img {width: 100%;height: 100%;object-fit: cover;transition: transform 0.5s ease-in-out;}
+
+.carousel-thumbnail.active {opacity: 0.5;}
+
 .carousel-prev,
-.carousel-next {position: absolute;top: 50%;transform: translateY(-50%);background-color: transparent;border: none;color: var(--light_color);font-size: 1.5rem;cursor: pointer;}
-  
-.carousel-prev {left: 1.25rem;}
-  
-.carousel-next {right: 1.25rem;}
+.carousel-next {position: absolute;top: 50%;transform: translateY(-50%);background-color: rgba(0, 0, 0, 0.5);border: none;color: var(--light_color);font-size: 1.5rem;cursor: pointer;transition: background-color 0.2s ease-in-out;}
+
+.carousel-prev {left: 1.25rem;padding: .625rem;border-radius: 50%;}
+
+.carousel-next {right: 1.25rem;padding: .625rem;border-radius: 50%;}
+
+.carousel-prev:hover,
+.carousel-next:hover {background-color: rgba(0, 0, 0, 0.8);}
+
+.carousel-prev i,
+.carousel-next i {font-size: 2rem;}
   
   
 
