@@ -2,9 +2,24 @@
 /* 
     MAIN
 */
-i {color: var(--dark_color);}
 
-.carousel_container {width: 50rem;margin: 0 auto;margin-top: 6.25rem;}
+.carousel-container {width: 50rem;height: 31.25rem;margin: 3.125rem auto;position: relative;}
+  
+.carousel-slide {display: flex;width: 100%;height: 100%;position: absolute;top: 0;left: 0;}
+  
+.carousel-slide img {width: 100%;height: 100%;object-fit: cover;}
+  
+.carousel-text {position: absolute;bottom: 0;left: 0;padding: 1.25rem;color: var(--light_color);background-color:transparent;width: 100%;}
+  
+.carousel-text h2 {font-size: 1.5rem;margin-bottom: .625rem;}
+   
+.carousel-prev,
+.carousel-next {position: absolute;top: 50%;transform: translateY(-50%);background-color: transparent;border: none;color: var(--light_color);font-size: 1.5rem;cursor: pointer;}
+  
+.carousel-prev {left: 1.25rem;}
+  
+.carousel-next {right: 1.25rem;}
+  
+  
 
-.carousel-item img {height: 31.25rem;object-fit: cover;}
 
